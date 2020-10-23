@@ -1,0 +1,40 @@
+<section class="phase6" dir="rtl">
+    <div class="title">
+            {{title}}
+    </div>
+    <div class="list">
+        <ul>
+            <li>
+                <p class="mini_box">1</p>
+                <p class="paragraph">{{p1}}</p>
+            </li>
+            <li>
+                <p class="mini_box">2</p>
+                <p class="paragraph">{{p2}}</p>
+            </li>
+            <li>
+                <p class="mini_box">3</p>
+                <p class="paragraph">{{p3}}</p>
+            </li>
+        </ul>
+    </div>
+    <div class="contact" id="section6">
+        <div class="contact-us">
+                <h3 class="contact-title">מתאים</h3>
+                <h1 class="contact-subtitle">צור קשר והתחל ללמוד</h1>
+                <input type="text" id="fullname" [(ngModel)]="contact.fullname" name="fullname" placeholder="שם מלא"> 
+                <br>
+                <input type="email" [(ngModel)]="contact.email" id="email" name="email" placeholder="אימייל">  
+                <br>
+                <input type="text" [(ngModel)]="contact.phone" id="phone" name="phone" placeholder="טלפון"> 
+                <br>
+                <div class="btns">
+                    <button class="details" (click)="sendDetails()">שלח פרטים</button>   
+                    <button  class="message" (click)="sendWhatsApp()">
+                        <img src="assets/images/whatsapp.svg">
+                        <span>שלח הודעה</span>
+                    </button>  
+                </div>
+        </div>
+    </div>
+</section>

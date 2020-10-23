@@ -1,0 +1,175 @@
+.phase6{
+    padding:2% 2%;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+
+}
+.title{
+    display: block;
+    width: 15%;
+    float: right;
+    text-align: right;
+    color:#707070;
+    font-size: 24px;
+    padding-right: 3%;
+}
+.list{
+    display: block;
+    width: 70%;
+    float: right;
+}
+.list ul li{
+    width: 33%;
+    padding:2px;
+    display: block;
+    float: right;
+}
+.mini_box{
+    display: block;
+    float: right;
+    margin-right: 50%;
+    width: 47px;
+    height: 47px;
+    box-shadow: 4px 4px 0px #91F20D;
+    background-color: #010a8b;
+    border-radius: 10px;
+    color:white;
+    text-align: center;
+    margin-top: 1%;
+    padding-top: 10px;
+    
+}
+.paragraph{
+    display: block;
+    float: right;
+    width:100%;
+    margin-top:5%;
+    padding:2% 2%;
+    margin-right: 3%;
+    color:#707070;
+    text-align: center;
+}
+
+.contact{
+    width:100%;
+    display: block;
+    float: right;
+}
+.contact-us{
+    width: 40%;
+    display: block;
+    float: right;
+    background-color:#010A8B;
+    margin-right: 30%;
+    margin-top:30px;
+    border-radius: 5px;
+
+}
+.contact-title{
+    color:#fff;
+    font-size: 16px;
+    text-align: center;
+    margin-top:10px;
+}
+.contact-subtitle{
+    color:#fff;
+    font-size: 36px;
+    text-align: center;
+}
+
+input[type=text],input[type=email]  {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+.btns{
+
+    display: block;
+    width: 100%;
+    margin-right: 1%;
+    padding:5px 5px 5px 5px;
+    margin-bottom: 10%;
+
+}
+.details{
+    cursor: pointer;
+
+    position: relative;
+    display: block;
+    float:right;
+    border:1px solid greenyellow;
+    background-color: #7dd505;
+    padding:5px;
+    border-radius: 5px;
+    width: 20%;
+    height: 40px;
+    color:#fff;
+
+}
+
+.message{
+    cursor: pointer;
+    position: relative;
+    display: block;
+    float:right;
+    border:1px solid greenyellow;
+    background-color: #4CAF50;
+    padding:5px;
+    border-radius: 5px;
+    width: 70%;
+    height: 40px;
+    margin-right: 10px;
+    color:#fff;
+
+}
+.message span{
+    position: absolute;
+    right: 30%;
+    bottom: 10px;
+}
+.message img{
+    position: absolute;
+    right: 65%;
+    bottom: 8px;
+}
+
+@media only screen and (max-width: 900px) {
+    .btns{
+        padding-bottom: 10%;
+    
+    }
+        
+}
+@media only screen and (max-width: 550px) {
+    .title{
+
+        width: 100%;
+        text-align: center;
+
+    }
+    .list{
+        width: 100%;
+    }
+    .list ul li{
+        width: 100%;
+        margin-top:5px;
+
+    }
+    .contact{
+        width:100%;
+        display: block;
+        float: right;
+    }
+    .contact-us{
+        width: 100%;
+        margin-right: 1%;
+        padding-bottom: 5px;
+    
+    }
+            
+}
+
+

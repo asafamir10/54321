@@ -1,0 +1,22 @@
+<section dir="rtl" class="phase2" id="section2">
+        <h2 class="title">{{title}}</h2>
+        <div>
+            <div class="card" *ngFor="let p of paragraphs;let i = index" >
+                <img src='{{cards[i]}}'>
+                <p>
+                {{p}}  
+                </p>
+            </div>
+        </div>
+        <div class="buttons">
+            <a  href="#section6">אני רוצה סילבוס מלא</a>
+        </div>
+        <div class="what-else">
+            <ul>
+                <li *ngFor="let w of whats;let i =index">
+                    <img src='{{imgSuccess}}'>
+                    <span>{{whats[i]}}</span>
+                </li>
+            </ul>
+        </div>
+</section>

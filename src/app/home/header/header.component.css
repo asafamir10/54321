@@ -1,0 +1,136 @@
+header{
+    background-image: transparent linear-gradient(180deg, #EBECF7 0%, var(--unnamed-color-ffffff) 100%) 0% 0% no-repeat padding-box;
+    opacity: 0.8;
+    background-position: center;
+    width: 100%;
+}
+.icon{
+    display: none;
+}
+
+.top-header{
+    width: 100%;
+    top:0;
+}
+.logo{
+    height: auto;
+    width:5%;
+    display: block;
+    float: left;
+    margin-top: 10px;
+    margin-left: 10%;
+    transition: transform 2s;
+}
+.logo:hover{
+    transform:scaleX(-1)
+}
+nav{
+    display: block;
+    float: right;
+    margin-right:30px;
+    width: 81%;
+}
+.main-nav{
+    list-style: none;
+    margin-top:2%;
+}
+.main-nav li{
+    display: inline;
+    margin-left: 5px;;
+}
+.main-nav li a:link,
+.main-nav li a:visited{
+    padding:8px;
+    color:#5C5F66;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border 1s;
+    opacity: 1;
+    text-align: center;
+    letter-spacing: 0px;
+
+}
+.main-nav li a:hover,
+.main-nav li a:active{
+    border-bottom: 2px solid  #39065a;
+}
+
+@media only screen and (max-width: 800px) {
+    .main-nav li a:link,
+    .main-nav li a:visited{
+        font-size: 80%;    
+    }
+    .icon{
+        display: none;
+    }
+
+}
+@media only screen and (max-width: 600px) {
+    .icon{
+        display: none;
+    }
+
+    .main-nav li a:link,
+    .main-nav li a:visited{
+        font-size: 60%;     
+    }
+    .logo{
+        width:100%;
+        display: block;
+        float: right;
+        margin-right: 40%;
+    }
+    .logo:hover{
+        transform:scaleX(1)
+    }
+    
+    
+}
+@media only screen and (max-width: 550px) {
+    .icon{
+        display: block;
+    }
+    .fa .fa-bars{
+        width:180%;
+        height: auto;
+    }
+    .logo{
+        height: auto;
+        display: block;
+        width:30%;
+        height: auto;;
+        float: left;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .logo:hover{
+        transform:scaleX(1)
+    }
+    nav{
+        display: block;
+        float: right;
+        margin-right:2px;
+        width: 50%;
+    }
+    .main-nav{
+        list-style: none;
+    }
+    .main-nav ul{
+        display: none; 
+
+    }
+    .main-nav li{
+        display: block; 
+        float:right;
+        width:150px;
+        height: 30px;
+        border:1px solid #5C5F66;
+    }
+        
+    
+}
+
+
+
