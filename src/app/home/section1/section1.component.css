@@ -10,7 +10,7 @@
 }
 h1{
     color:#010A8B;
-    font-size: 120%;
+    font-size: 140%;
     word-spacing: 4px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -22,7 +22,7 @@ h1{
 .subtitles{
     margin-top: 0;
     color:#5C5F66;
-    font-size: 80%;
+    font-size: 90%;
     word-spacing: 4px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -72,9 +72,8 @@ h1{
     float: right;
 }
 .Illustration img{
-    width: 50%;
+    width: 100%;
     height: auto;
-    margin-right: 20%;
     transform: scale(1);
     transition: transform 0.5s;
 }

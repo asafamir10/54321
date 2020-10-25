@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MainService } from '../main.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-section2',
@@ -7,43 +12,55 @@ import { MainService } from '../main.service';
   styleUrls: ['./section2.component.css']
 })
 export class Section2Component implements OnInit {
+  animal: string;
+  name: string;
 
-  title= "אז הנה בדיוק מה שאנחנו מכסים בקורס"
-  p1= "פיתוח קל ונוח למעקב ופיתוח CSS3 -ו HTML5 באינטרנט "
-  p2= "5 הצעדים המוכחים בעולם האמיתי מאפס לאתר אינטרנט מלא פונקציונלי"
-  p3= "הנחיות וטיפים לשימוש בעיצוב אתרים כדי לגרום לאתר שלך לבלוט "
-  p4= "כיצד להשיג ולהשתמש בתמונות, גופנים וסמלים כדי להבהיר את אתר האינטרנט"
-  p5= "עיצוב רספונסיבי: ללמוד כיצד ליצור אתרים שעובדים יפה בכל גודל המסך"
-  p6= "כיצד לבצע אופטימיזציה של האתר שלך (SEO) לביצועים מהירים טובים למנועי חיפוש "
-  paragraphs = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6]
-  cards = [
-  "assets/images/code.svg",
-  "assets/images/goal.svg",
-  "assets/images/sports-and-competition.svg",
-  "assets/images/website-design.svg",
-  "assets/images/computer.svg",
-  "assets/images/rocket.svg"
-  ]
-  imgSuccess= "assets/images/success-2.svg"
-  whats = [
-    "מיומנויות מהעולם האמיתי",
-    "ספר אלקטרוני ומצגות מסודרות",
-    "תרגולים",
-    "הנחיות וטיפים לשימוש בעיצוב אתרים כדי לגרום לאתר שלך להיות בולט",
-    "הרצאות, קוד הניתנים להורדה",
-    "חמשת הצעדים המוכחים, מאפס מוחלט לאתר אינטרנט פונקציונלי ומלא הכולל אופטימיזציה מלאה",
-  ]
+  title= "שיעור מספר 1"
+
   //    "פרויקט ענק שילמד את כל מה שצריך לדעת כדי להתחיל בעבודה עם HTML5 ו- CSS3",
 
   
-  constructor(private mainService:MainService) { 
-
-  }
+  constructor(private mainService:MainService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
   }
   sendWhatsApp(){
-    this.mainService.sendWhatsApp();
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '50%',
+      data: {name: this.name, animal: this.animal}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 
+
+
 }
+@Component({
+  selector: 'dialog-overview-example-dialog',
+  templateUrl: 'dialog-overview-example-dialog.html',
+})
+export class DialogOverviewExampleDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+  
+
+
+}
+
+
+
+

@@ -1,22 +1,37 @@
 <section dir="rtl" class="phase2" id="section2">
         <h2 class="title">{{title}}</h2>
-        <div>
-            <div class="card" *ngFor="let p of paragraphs;let i = index" >
-                <img src='{{cards[i]}}'>
-                <p>
-                {{p}}  
-                </p>
+        <div class="videoBox">
+            <h3 class="videoTitle">הורדת מיינקראפט</h3>
+            <div class="video_wrap">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/TZcQM9Yq224" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
-        <div class="buttons">
-            <a  href="#section6">אני רוצה סילבוס מלא</a>
+        <div class="videoBox">
+            <h3 class="videoTitle">הזדהות אחידה</h3>
+            <div class="video_wrap">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/TZcQM9Yq224" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
-        <div class="what-else">
-            <ul>
-                <li *ngFor="let w of whats;let i =index">
-                    <img src='{{imgSuccess}}'>
-                    <span>{{whats[i]}}</span>
-                </li>
-            </ul>
+        <div class="videoBox">
+            <h3 class="videoTitle">מה זה מיינקאפט</h3>
+            <div class="video_wrap">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/TZcQM9Yq224" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </div>
+        <div class="videoBox">
+            <h3 class="videoTitle">מתחילים לשחק</h3>
+            <div class="video_wrap">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/TZcQM9Yq224" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="moreStaff">
+            <div class="presentLink">
+                <a href="https://54321.co.il/assets/presentations/a1.pdf">הורד מצגת שיעור 1</a>
+            </div>
+            <div class="presentLink">
+                <a (click)="openDialog()">לחץ כאן למטלה מספר 1</a>
+            </div>              
+        </div>
+
+
 </section>
