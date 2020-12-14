@@ -43,7 +43,7 @@ export class Section4Component implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      this.result = result;
+      this.result = result;//
     });
   }
 
