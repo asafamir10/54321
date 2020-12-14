@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { MainService } from '../main.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogOverviewExampleDialog } from '../section2/section2.component';
 
 @Component({
   selector: 'app-section3',
@@ -7,38 +9,42 @@ import { MainService } from '../main.service';
   styleUrls: ['./section3.component.css']
 })
 export class Section3Component implements OnInit {
+  myHtml: string;
+  result: string="result";
+  title= "שיעור מספר 2"
 
-  constructor(private mainService:MainService) { }
-  title = "אם התשובה שלך היא כן, אז זה בדיוק המסלול שאתה מחפש"
 
-  subtitle = "סיבות לקחת את הקורס"
-  setntence1 = "האם אתה מחפש את הדרך הטובה ביותר ללמוד כיצד לבנות אתרים ?CSS3 -ו HTML5 "
-  setntence2 = "האם לקחת קורסים אחרים אך עדיין תוהה כיצד לבנות אתר אינטרנט אמיתי ולא רק כמה דוגמאות בסיסיות"
-  p1 = `
-  יחד אנו נלמד לקודד דף נחיתה יפהפה ומגיב עבור חברה. שלב אחר שלב, תלמד יותר ויותר תכונות HTML5 ו- CSS3, מתחילים ועד רמת מתקדמים. 
-  פרויקט הסיכום ילמד אתכם את כל הכישורים בעולם האמיתי לבניית אתרי HTML5 בעולם האמיתי. זה יאפשר לך לבנות כל אתר שאתה יכול לדמיין ... מאפס מלא.
-    `
-  p2 = `
-  כתיבת css  היא חשובה, אבל זה לא הכל! לכן אנו עוברים את כל תהליך הבנייה וההשקה של פרויקט האתר שלנו. זה כולל תכנון, כתיבת קוד נקי ומאורגן, אופטימיזציה לאתר, שיטות עבודה מומלצות והרבה רבה יותר מכך.
-  עיצוב הוא ממש ממש חשוב. ראית את כל האתרים היפים לאחרונה? מצוין! כי אני אראה לך איך זה נעשה. ולא רק בתיאוריה, אלא גם בפועל. זה הקורס היחיד בשוק המתמקד בקידוד ובעיצוב יחד.
-    `
-  p3 = `
-  בסוף הקורס יהיה לכם אתר שלם ומוכן להשקה שנראה נהדר בכל מחשב, טאבלט וסמארטפון. כמובן שאתה מקבל את כל הקוד.
-  הסתכלו בסרטון הפרומו כדי לראות את האתר הסופי!
-    `
-  p4 = `
-  בעזרת ההנחיות הנכונות עיצוב אתרים רספונסיבי הם קלים מאוד לשימוש וללימוד בעולם האמיתי. 
-  `
-  title1= "הקורס מחולק לשניים: לימוד + פרויקט גדול"
-  title2= "לא תלמדו רק כיצד לכתוב css"
-  title3= "אתר מוכן"
-  title4= "אני הופך את HTML5 ו- CSS3 לקלים ומהנים"
-
+  
+  constructor(private mainService:MainService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
-  }
+    this.myHtml = `
+    <h1>מטלה מספר 2 </h1>
+    <div>
+        <ul>
+            <li>
+            צרו מבנה עם דלת וחלון, כמה שיותר יצירתי יותר טוב ☺
+            </li>
+            <li>
+            הוסיפו בתוך המבנה לוח עם שאלה לבחירתכם
+            </li>
+        </ul>
+    </div>
+    `
+    }
   sendWhatsApp(){
-    this.mainService.sendWhatsApp();
   }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '50%',
+      data: {title: "תרגיל מספר 2", myHtml: this.myHtml, result:this.result}
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.result = result;
+    });
+  }
 }

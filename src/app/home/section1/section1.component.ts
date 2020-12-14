@@ -9,7 +9,7 @@ import { MainService } from '../main.service';
 export class Section1Component implements OnInit {
   title = 'css-land-page';
   titles = ["קורס מיינקראפט"]
-  subtitles = ["לומדים אנגלית עם מיינקראפט"]
+  subtitles = ["לומדים  עם מיינקראפט"]
   w = `<a href="https://web.whatsapp.com/send?text=www.google.com"
   data-text="Take a look at this awesome website:" 
   class="wa_btn wa_btn_s" style="display:none">Share1</a>

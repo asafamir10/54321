@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../main.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DialogOverviewExampleDialog } from '../section2/section2.component';
 
 @Component({
   selector: 'app-section4',
@@ -8,21 +10,41 @@ import { MainService } from '../main.service';
 })
 export class Section4Component implements OnInit {
 
-  title="בואו נגלה אם הקורס הזה בשבילכם"
-  subtitle = "זה מתאים לחלוטין אם"
-  p1 = "אין לך רקע בכלל בכתיבת קוד"
-  p2 = "אתה כבר מכיר html ו css אך נאבק להקים אתר שלם שנראה טוב"
-  p3 = "אתה מעצב או גרפיקאי ורוצה להרחיב כישוריך, מכיון שכל עמיתך יודעים לקודד html ו css"
-  
-  pfinal2 = ",אם אתה בונה את האתרים היפים ביותר בעולם ,CSS3 -ו HTML5 -בעיקרון, אם אתה מאסטר ב .אל תשתתף בקורס. אבל אם אתה אחד מהשלושה אז אתה צריך לקחת את הקורס היום"
-  pfinal = "אם אתה אחד מהשלושה אז אתה צריך לקחת את הקורס"
+  myHtml: string;
+  result: string="result";
+  title= "שיעור מספר 3"
 
-  constructor(private mainService:MainService) { }
+  constructor(private mainService:MainService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit() {
-  }
+    this.myHtml = `
+    <h1>מטלה מספר 2 </h1>
+    <div>
+        <ul>
+            <li>
+            צרו מבנה עם דלת וחלון, כמה שיותר יצירתי יותר טוב ☺
+            </li>
+            <li>
+            הוסיפו בתוך המבנה לוח עם שאלה לבחירתכם
+            </li>
+        </ul>
+    </div>
+    `
+    }
   sendWhatsApp(){
-    this.mainService.sendWhatsApp();
+  }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+      width: '50%',
+      data: {title: "תרגיל מספר 2", myHtml: this.myHtml, result:this.result}
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.result = result;
+    });
   }
 
 

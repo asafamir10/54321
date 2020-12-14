@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { HeaderComponent } from './home/header/header.component';
-import { Section3Component } from './home/section3/section3.component';
 import { Section4Component } from './home/section4/section4.component';
 import { Section5Component } from './home/section5/section5.component';
 import { FooterComponent } from './home/footer/footer.component';
@@ -17,6 +16,7 @@ import { Lesson1Component } from './home/lesson1/lesson1.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialogModule} from '@angular/material/dialog';
 import { Section2Component, DialogOverviewExampleDialog } from './home/section2/section2.component';
+import { Section3Component } from './home/section3/section3.component';
 
 @NgModule({
   declarations: [
